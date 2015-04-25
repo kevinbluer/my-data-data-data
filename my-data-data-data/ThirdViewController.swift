@@ -46,5 +46,13 @@ class ThirdViewController: UIViewController {
         
     }
     
+    @IBAction func buttonUserDefault(sender: AnyObject) {
+        var name: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("Name")
+        
+        var switchVal: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("Switch")
+        
+        println(name!)
+        println(switchVal!)
+    }
 }
 

@@ -9,6 +9,8 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var switchSomething: UISwitch!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,16 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func buttonSaveName(sender: AnyObject) {
+        NSUserDefaults.standardUserDefaults().setObject(txtName.text, forKey:"Name")
+        
+        NSUserDefaults.standardUserDefaults().setObject(switchSomething.on, forKey:"Switch")
+        
+    }
 
+    @IBAction func switchChanged(sender: AnyObject) {
+        
+        println(switchSomething.on)
+    }
 }
 
